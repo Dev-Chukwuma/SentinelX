@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threat Intelligence · SentinelX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="sidebar-overlay"></div>
+
+  <aside class="sidebar">
+    <button class="sidebar-collapse-btn" aria-label="Collapse sidebar"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="brand-text"><div class="name">SentinelX</div><div class="tag">SOC Platform</div></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Overview</div>
+      <a href="index.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i><span class="label">Dashboard</span></a>
+      <a href="alerts.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i><span class="label">Alerts</span><span class="badge">7</span></a>
+      <a href="threat-intelligence.html" class="nav-item"><i class="fa-solid fa-satellite-dish"></i><span class="label">Threat Intelligence</span></a>
+      <div class="nav-section-label">Operations</div>
+      <a href="logs.html" class="nav-item"><i class="fa-solid fa-list-ul"></i><span class="label">Logs</span></a>
+      <a href="assets.html" class="nav-item"><i class="fa-solid fa-server"></i><span class="label">Assets</span></a>
+      <a href="reports.html" class="nav-item"><i class="fa-solid fa-file-lines"></i><span class="label">Reports</span></a>
+      <div class="nav-section-label">System</div>
+      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="label">Settings</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot"></span><span class="label">All systems operational</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="navbar">
+      <div class="navbar-left">
+        <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        <div class="breadcrumb"><span class="eyebrow">Overview</span><h1>Threat Intelligence</h1></div>
+      </div>
+      <div class="navbar-right">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search IOCs, CVEs, actors..."><kbd>/</kbd></div>
+        <button class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn" data-notif-btn aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+        <div class="user-chip"><div class="user-avatar">DC</div><div><div class="u-name">Divine C.</div><div class="u-role">Security Analyst</div></div><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="page-intro"><p>Aggregated indicators of compromise and emerging threat activity relevant to your environment.</p></div>
+
+      <div class="stat-grid">
+        <div class="stat-card" style="--accent:#3B82F6; --accent-dim:rgba(59,130,246,0.15)">
+          <div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-fingerprint"></i></div></div>
+          <div class="stat-value" data-count-to="2847">0</div><div class="stat-label">Tracked IOCs</div>
+        </div>
+        <div class="stat-card" style="--accent:#EF4444; --accent-dim:rgba(239,68,68,0.15)">
+          <div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-bug-slash"></i></div></div>
+          <div class="stat-value" data-count-to="6">0</div><div class="stat-label">Active Campaigns Matched</div>
+        </div>
+        <div class="stat-card" style="--accent:#F59E0B; --accent-dim:rgba(245,158,11,0.15)">
+          <div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-shield-virus"></i></div></div>
+          <div class="stat-value" data-count-to="31">0</div><div class="stat-label">Unpatched CVEs (High+)</div>
+        </div>
+        <div class="stat-card" style="--accent:#22C55E; --accent-dim:rgba(34,197,94,0.15)">
+          <div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-rotate"></i></div></div>
+          <div class="stat-value">4 min ago</div><div class="stat-label">Last Feed Sync</div>
+        </div>
+      </div>
+
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text"><h2>Active Threat Actors</h2><span class="sub">Groups with observed activity in your sector</span></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Actor / Group</th><th>Motivation</th><th>Techniques</th><th>Confidence</th></tr></thead>
+              <tbody>
+                <tr><td class="primary">APT-Silent Wolf</td><td>Espionage</td><td class="mono">T1566, T1059</td><td><span class="badge high">High</span></td></tr>
+                <tr><td class="primary">FIN-Cobalt Reef</td><td>Financial</td><td class="mono">T1078, T1486</td><td><span class="badge critical">Critical</span></td></tr>
+                <tr><td class="primary">Hydra Loader Crew</td><td>Ransomware-as-a-Service</td><td class="mono">T1486, T1490</td><td><span class="badge high">High</span></td></tr>
+                <tr><td class="primary">GreyByte Collective</td><td>Hacktivism</td><td class="mono">T1498, T1190</td><td><span class="badge medium">Medium</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text"><h2>IOC Feed Volume</h2><span class="sub">New indicators, last 7 days</span></div>
+          </div>
+          <div class="chart-wrap sm"><canvas data-sparkline="120,180,140,220,260,210,300" data-color="#3B82F6"></canvas></div>
+          <div style="margin-top:14px; display:flex; flex-direction:column; gap:10px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-secondary); margin-bottom:4px;"><span>Malicious IPs</span><span>1,204</span></div>
+              <div class="progress-track"><div class="progress-fill" style="width:78%;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-secondary); margin-bottom:4px;"><span>Malicious Domains</span><span>892</span></div>
+              <div class="progress-track"><div class="progress-fill" style="width:56%; background: linear-gradient(90deg, var(--cyan), var(--success));"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-secondary); margin-bottom:4px;"><span>File Hashes</span><span>751</span></div>
+              <div class="progress-track"><div class="progress-fill" style="width:44%; background: linear-gradient(90deg, var(--warning), var(--danger));"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-header-text"><h2>Critical CVEs Affecting Your Assets</h2><span class="sub">Prioritized by exploitability and asset exposure</span></div>
+          <button class="btn btn-ghost"><i class="fa-solid fa-download"></i> Export</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>CVE ID</th><th>Description</th><th>CVSS</th><th>Affected Assets</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td class="mono primary">CVE-2026-31442</td><td>Remote code execution in web server module</td><td><span class="badge critical">9.8</span></td><td>3</td><td><span class="badge investigating">Patch pending</span></td></tr>
+              <tr><td class="mono primary">CVE-2026-28810</td><td>Privilege escalation via kernel driver</td><td><span class="badge high">8.4</span></td><td>7</td><td><span class="badge investigating">Patch pending</span></td></tr>
+              <tr><td class="mono primary">CVE-2026-26173</td><td>Authentication bypass in VPN client</td><td><span class="badge high">7.9</span></td><td>1</td><td><span class="badge resolved">Patched</span></td></tr>
+              <tr><td class="mono primary">CVE-2026-24950</td><td>Cross-site scripting in admin panel</td><td><span class="badge medium">6.1</span></td><td>2</td><td><span class="badge resolved">Patched</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>SentinelX SOC Platform &copy; 2026. Built by Divine Chukwuma.</span>
+      <span data-live-clock></span>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings · SentinelX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="sidebar-overlay"></div>
+
+  <aside class="sidebar">
+    <button class="sidebar-collapse-btn" aria-label="Collapse sidebar"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="brand-text"><div class="name">SentinelX</div><div class="tag">SOC Platform</div></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Overview</div>
+      <a href="index.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i><span class="label">Dashboard</span></a>
+      <a href="alerts.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i><span class="label">Alerts</span><span class="badge">7</span></a>
+      <a href="threat-intelligence.html" class="nav-item"><i class="fa-solid fa-satellite-dish"></i><span class="label">Threat Intelligence</span></a>
+      <div class="nav-section-label">Operations</div>
+      <a href="logs.html" class="nav-item"><i class="fa-solid fa-list-ul"></i><span class="label">Logs</span></a>
+      <a href="assets.html" class="nav-item"><i class="fa-solid fa-server"></i><span class="label">Assets</span></a>
+      <a href="reports.html" class="nav-item"><i class="fa-solid fa-file-lines"></i><span class="label">Reports</span></a>
+      <div class="nav-section-label">System</div>
+      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="label">Settings</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot"></span><span class="label">All systems operational</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="navbar">
+      <div class="navbar-left">
+        <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        <div class="breadcrumb"><span class="eyebrow">System</span><h1>Settings</h1></div>
+      </div>
+      <div class="navbar-right">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search settings..."><kbd>/</kbd></div>
+        <button class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn" data-notif-btn aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+        <div class="user-chip"><div class="user-avatar">DC</div><div><div class="u-name">Divine C.</div><div class="u-role">Security Analyst</div></div><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+    </header>
+
+    <main class="page" style="max-width: 900px;">
+      <div class="page-intro"><p>Manage your profile, alert preferences, and platform integrations.</p></div>
+
+      <div class="settings-section">
+        <h3>Profile</h3>
+        <div class="desc">Your account information across SentinelX.</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div>
+            <label style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:6px;">Full Name</label>
+            <input type="text" class="text-input" value="Divine Chukwuma">
+          </div>
+          <div>
+            <label style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:6px;">Role</label>
+            <input type="text" class="text-input" value="Security Analyst">
+          </div>
+          <div>
+            <label style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:6px;">Email</label>
+            <input type="email" class="text-input" value="divine@sentinelx.local">
+          </div>
+          <div>
+            <label style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:6px;">Timezone</label>
+            <input type="text" class="text-input" value="WAT (UTC+1)">
+          </div>
+        </div>
+        <div style="margin-top:18px; display:flex; gap:10px;">
+          <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+          <button class="btn btn-ghost">Cancel</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Notification Preferences</h3>
+        <div class="desc">Choose how and when you're alerted.</div>
+        <div class="settings-row">
+          <div><div class="label">Critical alert push notifications</div><div class="hint">Instant alerts for critical-severity events</div></div>
+          <div class="toggle on"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">Email digest</div><div class="hint">Daily summary of alerts and system activity</div></div>
+          <div class="toggle on"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">SMS for critical incidents</div><div class="hint">Text message for unresolved critical alerts after 15 min</div></div>
+          <div class="toggle"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">Weekly report email</div><div class="hint">Automated weekly security summary</div></div>
+          <div class="toggle on"></div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Security</h3>
+        <div class="desc">Protect your account and session.</div>
+        <div class="settings-row">
+          <div><div class="label">Two-factor authentication</div><div class="hint">Require a verification code at login</div></div>
+          <div class="toggle on"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">Session timeout</div><div class="hint">Automatically sign out after inactivity</div></div>
+          <select class="select"><option>15 minutes</option><option selected>30 minutes</option><option>1 hour</option><option>4 hours</option></select>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">API access</div><div class="hint">Allow programmatic access via API keys</div></div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Appearance</h3>
+        <div class="desc">Customize your dashboard experience.</div>
+        <div class="settings-row">
+          <div><div class="label">Dark mode</div><div class="hint">SentinelX is optimized for low-light SOC environments</div></div>
+          <div class="toggle on"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">Compact table rows</div><div class="hint">Show more data per screen</div></div>
+          <div class="toggle"></div>
+        </div>
+        <div class="settings-row">
+          <div><div class="label">Reduce motion</div><div class="hint">Minimize animations across the interface</div></div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="settings-section" style="border-color: rgba(239,68,68,0.3);">
+        <h3 style="color:var(--danger);">Danger Zone</h3>
+        <div class="desc">Irreversible account actions.</div>
+        <div class="settings-row">
+          <div><div class="label">Sign out of all devices</div><div class="hint">Ends all active sessions immediately</div></div>
+          <button class="btn btn-danger-outline">Sign Out All</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <span>SentinelX SOC Platform &copy; 2026. Built by Divine Chukwuma.</span>
+      <span data-live-clock></span>
+    </footer>
+  </div>
+</div>
+
+<script src="js/sidebar.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

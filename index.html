@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · SentinelX</title>
+<meta name="description" content="SentinelX — real-time cybersecurity operations dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <div class="sidebar-overlay"></div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <button class="sidebar-collapse-btn" aria-label="Collapse sidebar"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="brand-text">
+        <div class="name">SentinelX</div>
+        <div class="tag">SOC Platform</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Overview</div>
+      <a href="index.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i><span class="label">Dashboard</span></a>
+      <a href="alerts.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i><span class="label">Alerts</span><span class="badge">7</span></a>
+      <a href="threat-intelligence.html" class="nav-item"><i class="fa-solid fa-satellite-dish"></i><span class="label">Threat Intelligence</span></a>
+
+      <div class="nav-section-label">Operations</div>
+      <a href="logs.html" class="nav-item"><i class="fa-solid fa-list-ul"></i><span class="label">Logs</span></a>
+      <a href="assets.html" class="nav-item"><i class="fa-solid fa-server"></i><span class="label">Assets</span></a>
+      <a href="reports.html" class="nav-item"><i class="fa-solid fa-file-lines"></i><span class="label">Reports</span></a>
+
+      <div class="nav-section-label">System</div>
+      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="label">Settings</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span class="label">All systems operational</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        <div class="breadcrumb">
+          <span class="eyebrow">Overview</span>
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search alerts, IPs, hosts...">
+          <kbd>/</kbd>
+        </div>
+        <button class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn" data-notif-btn aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+        <div class="user-chip">
+          <div class="user-avatar">DC</div>
+          <div>
+            <div class="u-name">Divine C.</div>
+            <div class="u-role">Security Analyst</div>
+          </div>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page">
+      <div class="page-intro">
+        <p>Real-time visibility across your monitored environment — last updated seconds ago.</p>
+      </div>
+
+      <!-- Stat cards -->
+      <section class="stat-grid">
+        <div class="stat-card" style="--accent:#EF4444; --accent-dim:rgba(239,68,68,0.15)">
+          <div class="stat-top">
+            <div class="stat-icon"><i class="fa-solid fa-radiation"></i></div>
+            <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> 12%</div>
+          </div>
+          <div class="stat-value" data-count-to="14">0</div>
+          <div class="stat-label">Critical Alerts</div>
+        </div>
+
+        <div class="stat-card" style="--accent:#3B82F6; --accent-dim:rgba(59,130,246,0.15)">
+          <div class="stat-top">
+            <div class="stat-icon"><i class="fa-solid fa-desktop"></i></div>
+            <div class="stat-trend down"><i class="fa-solid fa-arrow-up"></i> 3.2%</div>
+          </div>
+          <div class="stat-value" data-count-to="1284">0</div>
+          <div class="stat-label">Protected Assets</div>
+        </div>
+
+        <div class="stat-card" style="--accent:#22D3EE; --accent-dim:rgba(34,211,238,0.15)">
+          <div class="stat-top">
+            <div class="stat-icon"><i class="fa-solid fa-ban"></i></div>
+            <div class="stat-trend down"><i class="fa-solid fa-arrow-down"></i> 8%</div>
+          </div>
+          <div class="stat-value" data-count-to="392">0</div>
+          <div class="stat-label">Blocked IP Addresses</div>
+        </div>
+
+        <div class="stat-card" style="--accent:#F59E0B; --accent-dim:rgba(245,158,11,0.15)">
+          <div class="stat-top">
+            <div class="stat-icon"><i class="fa-solid fa-gauge"></i></div>
+            <div class="stat-trend flat"><i class="fa-solid fa-minus"></i> stable</div>
+          </div>
+          <div class="stat-value">Elevated</div>
+          <div class="stat-label">Threat Level</div>
+        </div>
+      </section>
+
+      <!-- Charts row 1 -->
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Network Traffic</h2>
+              <span class="sub">Inbound vs outbound throughput, last 24 hours</span>
+            </div>
+            <div class="chip-toggle">
+              <button class="active">24H</button>
+              <button>7D</button>
+              <button>30D</button>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="networkTrafficChart"></canvas></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Attack Categories</h2>
+              <span class="sub">Distribution this week</span>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="attackCategoriesChart"></canvas></div>
+        </div>
+      </section>
+
+      <!-- Charts row 2 -->
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Threat Timeline</h2>
+              <span class="sub">Alert volume by severity, last 8 days</span>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="threatTimelineChart"></canvas></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Alert Trends</h2>
+              <span class="sub">Resolved vs open, this week</span>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="alertTrendsChart"></canvas></div>
+        </div>
+      </section>
+
+      <!-- Live logs + Recent alerts -->
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Live Security Logs</h2>
+              <span class="sub">Streaming from all monitored sources</span>
+            </div>
+            <a href="logs.html" class="panel-action">View all <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Time</th><th>Event</th><th>Source IP</th><th>Severity</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="mono">14:32:08</td><td class="primary">Failed SSH login attempt (5x)</td><td class="mono">185.220.101.4</td><td><span class="badge high">High</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+                <tr><td class="mono">14:29:51</td><td class="primary">Suspicious PowerShell execution</td><td class="mono">10.0.4.112</td><td><span class="badge critical">Critical</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+                <tr><td class="mono">14:26:14</td><td class="primary">Port scan detected</td><td class="mono">203.0.113.77</td><td><span class="badge medium">Medium</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+                <tr><td class="mono">14:21:39</td><td class="primary">Malware signature matched: Trojan.GenKD</td><td class="mono">10.0.2.56</td><td><span class="badge critical">Critical</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+                <tr><td class="mono">14:18:02</td><td class="primary">New device joined VLAN 20</td><td class="mono">10.0.5.19</td><td><span class="badge low">Low</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+                <tr><td class="mono">14:12:47</td><td class="primary">DNS request to known C2 domain blocked</td><td class="mono">45.155.204.9</td><td><span class="badge critical">Critical</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-text">
+              <h2>Recent Alerts</h2>
+              <span class="sub">Requiring attention</span>
+            </div>
+            <a href="alerts.html" class="panel-action">View all <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="alert-list">
+            <div class="alert-card" style="--accent:#EF4444; --accent-dim:rgba(239,68,68,0.15)">
+              <div class="alert-icon"><i class="fa-solid fa-bug"></i></div>
+              <div class="alert-body">
+                <div class="top-row"><h4>Ransomware behavior detected on FIN-WKS-014</h4><span class="badge critical">Critical</span></div>
+                <p>Encryption-like file activity flagged across shared drive. Host isolated automatically.</p>
+                <div class="alert-meta"><span><i class="fa-regular fa-clock"></i> 6 min ago</span><span><i class="fa-regular fa-user"></i> Auto-assigned: T. Reyes</span></div>
+              </div>
+            </div>
+
+            <div class="alert-card" style="--accent:#F59E0B; --accent-dim:rgba(245,158,11,0.15)">
+              <div class="alert-icon"><i class="fa-solid fa-user-lock"></i></div>
+              <div class="alert-body">
+                <div class="top-row"><h4>Privilege escalation attempt on DB-SRV-02</h4><span class="badge high">High</span></div>
+                <p>Service account requested admin group membership outside change window.</p>
+                <div class="alert-meta"><span><i class="fa-regular fa-clock"></i> 22 min ago</span><span><i class="fa-regular fa-user"></i> A. Bello</span></div>
+              </div>
+            </div>
+
+            <div class="alert-card" style="--accent:#22D3EE; --accent-dim:rgba(34,211,238,0.15)">
+              <div class="alert-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <div class="alert-body">
+                <div class="top-row"><h4>Unusual outbound data volume from HR-LAP-091</h4><span class="badge medium">Medium</span></div>
+                <p>412MB transferred to unrecognized external endpoint over 10 minutes.</p>
+                <div class="alert-meta"><span><i class="fa-regular fa-clock"></i> 41 min ago</span><span><i class="fa-regular fa-user"></i> Unassigned</span></div>
+              </div>
+            </div>
+
+            <div class="alert-card" style="--accent:#22C55E; --accent-dim:rgba(34,197,94,0.15)">
+              <div class="alert-icon"><i class="fa-solid fa-check"></i></div>
+              <div class="alert-body">
+                <div class="top-row"><h4>Phishing campaign contained</h4><span class="badge low">Low</span></div>
+                <p>18 mailboxes affected, all messages purged and sender domain blacklisted.</p>
+                <div class="alert-meta"><span><i class="fa-regular fa-clock"></i> 1 hr ago</span><span><i class="fa-regular fa-user"></i> M. Okoye</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Connected assets -->
+      <section class="panel" style="margin-bottom: 18px;">
+        <div class="panel-header">
+          <div class="panel-header-text">
+            <h2>Connected Assets</h2>
+            <span class="sub">Monitored endpoints and servers</span>
+          </div>
+          <a href="assets.html" class="panel-action">View all <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Hostname</th><th>Operating System</th><th>Status</th><th>Risk Level</th><th>Last Seen</th></tr></thead>
+            <tbody>
+              <tr><td class="primary">FIN-WKS-014</td><td>Windows 11 Pro</td><td><span class="badge offline">Isolated</span></td><td><span class="badge critical">Critical</span></td><td>Just now</td></tr>
+              <tr><td class="primary">DB-SRV-02</td><td>Ubuntu 22.04 LTS</td><td><span class="badge online">Online</span></td><td><span class="badge high">High</span></td><td>2 min ago</td></tr>
+              <tr><td class="primary">HR-LAP-091</td><td>macOS Sonoma</td><td><span class="badge online">Online</span></td><td><span class="badge medium">Medium</span></td><td>5 min ago</td></tr>
+              <tr><td class="primary">WEB-SRV-01</td><td>Ubuntu 22.04 LTS</td><td><span class="badge online">Online</span></td><td><span class="badge low">Low</span></td><td>Just now</td></tr>
+              <tr><td class="primary">DEV-WKS-033</td><td>Windows 11 Pro</td><td><span class="badge offline">Offline</span></td><td><span class="badge low">Low</span></td><td>3 hr ago</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>SentinelX SOC Platform &copy; 2026. Built by Divine Chukwuma.</span>
+      <span data-live-clock></span>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

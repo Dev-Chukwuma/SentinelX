@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logs · SentinelX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="sidebar-overlay"></div>
+
+  <aside class="sidebar">
+    <button class="sidebar-collapse-btn" aria-label="Collapse sidebar"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="brand-text"><div class="name">SentinelX</div><div class="tag">SOC Platform</div></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Overview</div>
+      <a href="index.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i><span class="label">Dashboard</span></a>
+      <a href="alerts.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i><span class="label">Alerts</span><span class="badge">7</span></a>
+      <a href="threat-intelligence.html" class="nav-item"><i class="fa-solid fa-satellite-dish"></i><span class="label">Threat Intelligence</span></a>
+      <div class="nav-section-label">Operations</div>
+      <a href="logs.html" class="nav-item"><i class="fa-solid fa-list-ul"></i><span class="label">Logs</span></a>
+      <a href="assets.html" class="nav-item"><i class="fa-solid fa-server"></i><span class="label">Assets</span></a>
+      <a href="reports.html" class="nav-item"><i class="fa-solid fa-file-lines"></i><span class="label">Reports</span></a>
+      <div class="nav-section-label">System</div>
+      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="label">Settings</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="system-status"><span class="status-dot"></span><span class="label">All systems operational</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="navbar">
+      <div class="navbar-left">
+        <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        <div class="breadcrumb"><span class="eyebrow">Operations</span><h1>Logs</h1></div>
+      </div>
+      <div class="navbar-right">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search logs..."><kbd>/</kbd></div>
+        <button class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn" data-notif-btn aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+        <div class="user-chip"><div class="user-avatar">DC</div><div><div class="u-name">Divine C.</div><div class="u-role">Security Analyst</div></div><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="page-intro"><p>Unified log stream aggregated from firewalls, endpoints, and cloud services.</p></div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-header-text"><h2>Event Log</h2><span class="sub">Showing 12 of 48,204 events &middot; live streaming</span></div>
+          <button class="btn btn-ghost"><i class="fa-solid fa-download"></i> Export CSV</button>
+        </div>
+
+        <div class="filter-bar">
+          <input type="text" class="text-input" style="width:240px;" placeholder="Filter by keyword, IP, host..." data-table-filter>
+          <select class="select" data-filter-select="severity">
+            <option value="all">All Severities</option>
+            <option value="critical">Critical</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <select class="select"><option>All Sources</option><option>Firewall</option><option>Endpoint</option><option>Cloud</option><option>VPN</option></select>
+        </div>
+
+        <div class="table-wrap">
+          <table data-filterable-table>
+            <thead><tr><th>Time</th><th>Event</th><th>Source IP</th><th>Host</th><th>Severity</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr data-severity="high"><td class="mono">14:32:08</td><td class="primary">Failed SSH login attempt (5x)</td><td class="mono">185.220.101.4</td><td>WEB-SRV-01</td><td><span class="badge high">High</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+              <tr data-severity="critical"><td class="mono">14:29:51</td><td class="primary">Suspicious PowerShell execution</td><td class="mono">10.0.4.112</td><td>DEV-WKS-033</td><td><span class="badge critical">Critical</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+              <tr data-severity="medium"><td class="mono">14:26:14</td><td class="primary">Port scan detected</td><td class="mono">203.0.113.77</td><td>DMZ-FW-01</td><td><span class="badge medium">Medium</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="critical"><td class="mono">14:21:39</td><td class="primary">Malware signature matched: Trojan.GenKD</td><td class="mono">10.0.2.56</td><td>FIN-WKS-014</td><td><span class="badge critical">Critical</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+              <tr data-severity="low"><td class="mono">14:18:02</td><td class="primary">New device joined VLAN 20</td><td class="mono">10.0.5.19</td><td>SW-CORE-02</td><td><span class="badge low">Low</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="critical"><td class="mono">14:12:47</td><td class="primary">DNS request to known C2 domain blocked</td><td class="mono">45.155.204.9</td><td>DNS-SRV-01</td><td><span class="badge critical">Critical</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="medium"><td class="mono">14:07:31</td><td class="primary">TLS certificate expiring in 7 days</td><td class="mono">10.0.1.10</td><td>WEB-SRV-01</td><td><span class="badge medium">Medium</span></td><td><span class="badge investigating">Open</span></td></tr>
+              <tr data-severity="low"><td class="mono">14:02:19</td><td class="primary">Scheduled backup completed successfully</td><td class="mono">10.0.6.4</td><td>BKP-SRV-01</td><td><span class="badge low">Low</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="high"><td class="mono">13:58:44</td><td class="primary">Multiple failed MFA challenges</td><td class="mono">10.0.3.28</td><td>HR-LAP-091</td><td><span class="badge high">High</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+              <tr data-severity="medium"><td class="mono">13:53:02</td><td class="primary">Outbound connection to Tor exit node</td><td class="mono">10.0.4.77</td><td>DEV-WKS-021</td><td><span class="badge medium">Medium</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="low"><td class="mono">13:47:56</td><td class="primary">User password changed</td><td class="mono">10.0.2.14</td><td>AD-SRV-01</td><td><span class="badge low">Low</span></td><td><span class="badge resolved">Resolved</span></td></tr>
+              <tr data-severity="high"><td class="mono">13:41:10</td><td class="primary">Unapproved USB storage device connected</td><td class="mono">10.0.5.63</td><td>FIN-WKS-009</td><td><span class="badge high">High</span></td><td><span class="badge investigating">Investigating</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <span>SentinelX SOC Platform &copy; 2026. Built by Divine Chukwuma.</span>
+      <span data-live-clock></span>
+    </footer>
+  </div>
+</div>
+
+<script src="js/sidebar.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
