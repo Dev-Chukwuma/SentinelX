@@ -1,1 +1,47 @@
+/* ==========================================================================
+   SentinelX — Responsive Rules
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1180px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-2, .grid-2-equal { grid-template-columns: 1fr; }
+  .search-box { width: 200px; }
+}
+
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.mobile-open { transform: translateX(0); box-shadow: 20px 0 40px rgba(0,0,0,0.5); }
+  .sidebar-collapse-btn { display: none; }
+  .main, .main.expanded { margin-left: 0; }
+  .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+  .search-box { display: none; }
+  .navbar { padding: 0 16px; }
+  .page { padding: 18px; }
+  .breadcrumb h1 { font-size: 16px; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .panel-header { flex-direction: column; align-items: flex-start; }
+  .user-chip .u-name, .user-chip .u-role { display: none; }
+  .user-chip { padding: 5px; }
+  .user-chip i.fa-chevron-down { display: none; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 10px 10px; }
+  .app-footer { flex-direction: column; align-items: flex-start; }
+  .alert-meta { gap: 8px; }
+  .filter-bar { gap: 8px; }
+  .select, .text-input { font-size: 12px; }
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active { display: block; }
 
